@@ -1,0 +1,25 @@
+# Set default behavior to always use LF line endings
+* text=auto
+
+# Explicitly declare text files you want to always be normalized and converted to LF
+*.java text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.json text eol=lf
+
+# Declare files that should always have CRLF line endings on checkout
+*.cmd text eol=crlf
+*.bat text eol=crlf
+
+# Ensure .gitattributes and .gitignore use LF line endings
+.gitattributes text eol=lf
+.gitignore text eol=lf
+
+# Ensure mvnw uses LF line endings
+mvnw text eol=lf
+
+# Ensure mvnw.cmd uses CRLF line endings
+mvnw.cmd text eol=crlf
