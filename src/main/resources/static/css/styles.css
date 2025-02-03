@@ -1,0 +1,127 @@
+:root { /*This is enabling me to create variables I can access anywhere in the css*/
+    --primary: #795e8b; /* Cyan accent */
+    --secondary: #1E1E1E; /* Dark gray background */
+    --grid-element: #333333; /* Slightly lighter gray for grid items */
+    --text: #fcf2ff; /* White text */
+}
+
+/* General Styles */
+body {
+    background-color: var(--secondary);
+    color: var(--text);
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation Bar */
+nav {
+    background-color: var(--primary);
+    padding: 10px;
+}
+
+nav a {
+    color: #1b1b1b; /* Dark gray text on cyan background */
+    text-decoration: none;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+/* About Section */
+#about {
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    color: var(--primary);
+}
+
+/* Quick Links Section */
+#quick-links{
+    padding: 20px;
+    text-align: center;
+}
+
+#quick-links h2{
+    color: var(--primary);
+    margin-bottom: 20px;
+}
+
+/* Grid Container */
+.grid-container{
+    display: grid;
+    grid-template-columns: 1fr; /* 2-column layout */
+    gap: 20px; /* Space between grid items */
+    max-width: 600px; /* Limit the width of the grid */
+    margin: 0 auto; /* Center the grid */
+}
+
+/* Grid Items */
+.grid-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 50px; /* Ensure sufficient height */
+    position: relative;
+    background-color: var(--grid-element);
+    border-radius: 10px;
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.text {
+    display: block;
+    position: absolute;
+    color: var(--primary);
+    width: 100%;
+    left: 0;
+    top: 34%; /* Center vertically */
+    transition: transform 0.5s ease;
+}
+
+.title {
+    transform: translateX(0);
+    font-weight: bold;
+}
+
+
+.description {
+    transform: translateX(100%); /* Start off-screen to the right */
+    white-space: normal;
+    word-wrap: break-word;
+    top: 40%;
+}
+
+.grid-item:hover .title {
+    transform: translateX(-100%); /* Move title off-screen to the left */
+}
+
+.grid-item:hover .description {
+    transform: translateX(0); /* Bring description into view */
+}
+.grid-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 8px rgba(173, 94, 180, 0.603); /* Cyan glow effect */
+}
+
+.long {
+    top: 30%;
+}
+
+.grid-item .title {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.grid-item .description {
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
